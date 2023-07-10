@@ -116,13 +116,25 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-   
-
+   if (arguments.length === 0){
+      return 0;
+   }
+   let resultado = 1;
+  for (let i = 0; i < arguments.length; i++) {
+    resultado *= arguments[i];
+  }
+  return resultado;
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   let elementosMayoresA18 = 0;
+ for (i = 0 ; i <= array.length ; i++){
+   if (array[i] > 18) {elementosMayoresA18++
+ }}
+ return elementosMayoresA18
+
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -130,18 +142,45 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   switch (numeroDeDia){
+      case 1 :
+         return "Es fin de semana"
+         breack;
+         case 7 :
+            return "Es fin de semana"
+            breack;
+
+
+        default: return"Es dia laboral";
+      }
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   const numStr = num.toString();
+   return numStr[0] === "9";
+   
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var primerElemento = array[0];
+   var diferencias = array.map(elemento => elemento - primerElemento); //se aplicará un rastreo map llamado elemento
+   return diferencias.every(diferencia => diferencia === 0);  // luego se retornara un rastreo every que devolveria un booleano
+
+   // function todosIguales(array) {
+   //    const primerElemento = array[0];
+   //    for (let i = 1; i < array.length; i++) {
+   //      if (array[i] !== primerElemento) {
+   //        return false;
+   //      }
+   //    }
+   //    return true;                        OTRA FORMA DE RESOLVER..
+   //  }
 }
 
 function mesesDelAño(array) {
@@ -149,18 +188,39 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   mesesPedidos= [];
+   mesesBuscados= ["Enero","Marzo","Noviembre"];
+   for (i = 0 ; i < array.length ; i++){
+      if (mesesBuscados.includes(array[i])){
+         mesesPedidos.push(array[i]);
+      }
+   }
+   if (mesesPedidos.length === mesesBuscados.length){
+      return mesesPedidos;
+   } else {return "No se encontraron los meses pedidos";}
+
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var numerosPrimos = [0,1,2,3,4,5,6,7,8,9,10];
+   var numerosxseis = numerosPrimos.map(num => num*6);
+   return numerosxseis;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var arregloMayoresCien = []
+   for (i=0 ; i < array.length ; i++)
+   if (array[i] > 100){
+      arregloMayoresCien.push(array[i])
+   }
+   return arregloMayoresCien;
+
 }
 
 /* ----------------------------------------------------------------------------------
@@ -174,6 +234,20 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   const nuevoValor = [];
+   let suma = num;
+ 
+   for (let i = 0; i < 10; i++) {
+     suma += 2;
+     nuevoValor.push(suma);
+ 
+     if (suma === i) {
+       return "Se interrumpió la ejecución";
+       break;
+     }
+   }
+ 
+   return nuevoValor;
 }
 
 function continueStatement(num) {
@@ -183,6 +257,21 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   const nuevoValor = [];
+   let suma = num;
+   let i = 0;
+ 
+   while (i < 10) {
+     i++;
+     if (i === 5) {
+       continue;
+     }
+ 
+     suma += 2;
+     nuevoValor.push(suma);
+   }
+ 
+   return nuevoValor;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
