@@ -266,11 +266,9 @@ function continueStatement(num) {
      if (i === 5) {
        continue;
      }
- 
      suma += 2;
      nuevoValor.push(suma);
    }
- 
    return nuevoValor;
 }
 
